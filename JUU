@@ -1,0 +1,66 @@
+import static java.lang.Integer.parseInt;
+import java.util.*;
+public class JUU{
+    
+
+	private String key;
+	private String value;
+	 HashMap<String, String> kv = new HashMap<String, String>();
+
+	 public JUU(String key) throws Exception{
+                setKeyValue();
+                 
+                    Object[] keys = kv.keySet().toArray();
+                    int i=0;
+                    while(i < keys.length){
+                        if(key.equals(keys[i].toString())){
+                            this.key=keys[i].toString();
+                            break;
+                        }
+                        ++i; 
+                    }
+                    
+                    if(i==keys.length){
+                        throw new Exception("Key tidak valid");
+                    } 
+     
+	 }
+         
+        @Override
+        public void setKeyValue(){
+        kv.put("1","Padi/palawija");
+		kv.put("2","Hortikultura");
+		kv.put("3a","Perkebunan Kakao/cokelat");
+		kv.put("3b","Perkebunan Karet");
+		kv.put("3c","Perkebunan Kelapa Sawit");
+		kv.put("3d","Perkebunan Kopi");
+		kv.put("3e","Perkebunan Teh");
+		kv.put("3f","Perkebunan Tebu");
+		kv.put("3g","Perkebunan Tembakau");
+		kv.put("3h","Perkebunan Cengkeh");
+		kv.put("3i","Perkebunan Kelapa");
+		kv.put("3j","Perkebunan Lada");
+		kv.put("3k","Tanaman Perkebunan Lainnya");
+		kv.put("4","HPH/IUPHHK-HA");
+		kv.put("5","HPHT/IUPHHK-HT/Perhutani/Kehutanan Lainnya");
+		kv.put("6","Penangkaran STL");
+		kv.put("7a","Budidaya Udang");
+		kv.put("7b","Budidaya Bandeng");
+		kv.put("7c","Budidaya Ikan Lainnya di Tambak");
+		kv.put("7d","Budidaya Ikan di Laut");
+		kv.put("7e","Budidaya Ikan di Air Tawar");
+		kv.put("7f","Budidaya Pembenihan");
+		kv.put("8","Penangkapan Ikan");
+		kv.put("9","Ternak Sapi Perah");
+		kv.put("10","Ternak Besar/Kecil");
+		kv.put("11","Unggas");
+        }
+        @Override
+	public String getKey(){
+		return this.key;
+	}
+        @Override
+	public String getValue(){
+		return kv.get(key);
+	}
+}
